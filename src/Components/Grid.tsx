@@ -15,13 +15,18 @@ export const Grid: React.FunctionComponent = () => {
         (grid.isVictorious() && 'victory') ||
         false;
 
+        console.log(grid)
+
     return (
         <React.Fragment>
             <Game gameOver={gameOver} />
             <div
                 style={{
                     display: 'flex',
-                    border: '1px solid black',
+                    border: '4px solid #004785',
+                    borderRadius:'5px',
+                    margin:"auto",
+                    marginTop:"40px",
                     boxSizing: 'content-box',
                     flexWrap: 'wrap',
                     width: `calc(40px * ${grid.column})`,

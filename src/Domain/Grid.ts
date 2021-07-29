@@ -24,6 +24,8 @@ export class Grid {
             cells[index] = cell;
         }
 
+        // add number bombs near here ?
+
         return new Grid(column, cells);
     }
 
@@ -80,6 +82,9 @@ export class Grid {
         for (let cell of this) {
             if (
                 (cell.dug === false && cell.flagged === false) ||
+                (cell.dug === false &&
+                    cell.flagged === true &&
+                    cell.bomb === false) ||
                 cell.detonated === true
             ) {
                 return false;

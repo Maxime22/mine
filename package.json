@@ -10,7 +10,7 @@
     "test": "jest --verbose"
   },
   "engines": {
-    "node": ">=10.18.1 <14"
+    "node": ">=10.18.1"
   },
   "author": "Antoine Lépée <antoine@evaneos.com>",
   "devDependencies": {
@@ -28,6 +28,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "css-loader": "^5.2.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },

@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom/index';
 import { GameContextProvider } from './GameContext';
 import { Grid } from './Components/Grid';
+import "../public/index.css";
 
 const App = () => {
     return (

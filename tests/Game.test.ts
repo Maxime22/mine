@@ -31,4 +31,22 @@ describe('Rules', () => {
         expect(gridDug.isDefeated()).toBe(false);
         expect(gridDug.isVictorious()).toBe(true);
     });
+
+    test('a game is won if every cell without bomb has been dug and we flagged the bomb', () => {
+        const cellWithBomb = Cell.withBomb();
+        const cellWithoutBomb = Cell.withoutBomb();
+        const grid = new Grid(1, [cellWithoutBomb, cellWithBomb]);
+        expect(grid.isDefeated()).toBe(false);
+        expect(grid.isVictorious()).toBe(false);
+
+        const gridDug = grid.sendActionToCell(0, 'dig');
+
+        expect(gridDug.isDefeated()).toBe(false);
+        expect(gridDug.isVictorious()).toBe(false);
+
+        const gridDug2 = gridDug.sendActionToCell(1, 'flag');
+
+        expect(gridDug2.isDefeated()).toBe(false);
+        expect(gridDug2.isVictorious()).toBe(true);
+    });
 });

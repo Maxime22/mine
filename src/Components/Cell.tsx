@@ -18,14 +18,15 @@ const cellStyle = (status: CellStatus): React.CSSProperties => ({
     height: '40px',
     textAlign: 'center',
     lineHeight: '40px',
-    border: '1px solid black',
+    border: '1px solid #004785',
     boxSizing: 'border-box',
     cursor: 'pointer',
     backgroundColor:
-        status === 'untouched' || status === 'flagged' ? '#ccc' : undefined,
+        status === 'untouched' || status === 'flagged' ? '#e8e8e8' : "white",
 });
 
 export const Cell: React.FunctionComponent<CellProps> = props => {
+    console.log(props)
     return (
         <div
             onClick={ev => {
@@ -38,7 +39,7 @@ export const Cell: React.FunctionComponent<CellProps> = props => {
             }}
             style={cellStyle(props.status)}
         >
-            {emojis[props.status]}
+            {props.status !== "dug" ? emojis[props.status] : "n"}
         </div>
     );
 };
