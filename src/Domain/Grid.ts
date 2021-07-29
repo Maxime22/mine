@@ -24,7 +24,32 @@ export class Grid {
             cells[index] = cell;
         }
 
-        // add number bombs near here ?
+        /* let tableCells: boolean[][] = [];
+        let c = 0;
+        // créer un tableau à 2 dimensions, interroger à gauche à droite en haut en bas si bomb est à true, si oui on augmente un compteur
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < column; j++) {
+                if (!tableCells[i]) tableCells[i] = [];
+                tableCells[i][j] = cells[c].bomb;
+                c++;
+            }
+        }
+        c = 0;
+        let numberOfBombsNear = 0;
+        for (let i = 0; i < row; i++) {
+            for (let j = 0; j < column; j++) {
+                numberOfBombsNear = 0;
+                tableCells[i - 1][j] === true ? numberOfBombsNear++ : '';
+                tableCells[i + 1][j] === true ? numberOfBombsNear++ : '';
+                tableCells[i][j - 1] === true ? numberOfBombsNear++ : '';
+                tableCells[i][j + 1] === true ? numberOfBombsNear++ : '';
+                cells[c].numberOfBombsNear = numberOfBombsNear;
+                c++;
+            }
+        }
+
+        console.log(tableCells);
+        console.log(cells); */
 
         return new Grid(column, cells);
     }

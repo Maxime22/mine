@@ -1,3 +1,5 @@
+import internal from 'stream';
+
 export type CellStatus = 'untouched' | 'flagged' | 'dug' | 'detonated';
 export type CellAction = 'dig' | 'flag';
 
